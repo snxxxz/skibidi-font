@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7f9fc;
-            color: #333;
+            background-color: #121212;
+            color: #e0e0e0;
             padding: 20px;
             margin: 0;
             display: flex;
@@ -16,7 +16,7 @@
             align-items: center;
         }
         h1 {
-            color: #007BFF;
+            color: #1e90ff;
             margin-bottom: 20px;
             font-size: 24px;
             text-align: center;
@@ -29,15 +29,17 @@
         input[type="text"] {
             font-size: 16px;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #333;
             border-radius: 8px;
             width: 100%;
             max-width: 500px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            background-color: #1f1f1f;
+            color: #e0e0e0;
             transition: border-color 0.3s;
         }
         input[type="text"]:focus {
-            border-color: #007BFF;
+            border-color: #1e90ff;
             outline: none;
         }
         button {
@@ -48,30 +50,30 @@
             border-radius: 8px;
             cursor: pointer;
             color: #fff;
-            background-color: #007BFF;
+            background-color: #1e90ff;
             transition: background-color 0.3s, transform 0.3s;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #1c86ee;
         }
         button:active {
             transform: scale(0.98);
         }
         #result {
             white-space: pre;
-            border: 1px solid #ddd;
+            border: 1px solid #333;
             padding: 15px;
             margin-top: 20px;
             border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #1f1f1f;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             word-break: break-all;
             width: 100%;
             max-width: 500px;
             overflow-x: auto;
             text-align: center;
             font-size: 14px;
-            color: #333;
+            color: #e0e0e0;
         }
         .alert {
             margin-top: 10px;
@@ -79,7 +81,7 @@
             border: 1px solid #f44336;
             border-radius: 8px;
             color: #f44336;
-            background-color: #fdecea;
+            background-color: #3c3c3c;
             display: none;
         }
         @media (max-width: 600px) {

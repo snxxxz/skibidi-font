@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username with Spaces</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #007BFF;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="text"] {
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #007BFF;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        #result {
+            white-space: pre;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            word-break: break-all;
+            width: 100%;
+            max-width: 500px;
+            overflow-x: auto;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+        .alert {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #f44336;
+            border-radius: 8px;
+            color: #f44336;
+            background-color: #fdecea;
+            display: none;
+        }
+        @media (max-width: 600px) {
+            input[type="text"], button {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Generate Username For Font Method</h1>
+    <label for="username">Enter Username:</label>
+    <input type="text" id="username" placeholder="Enter your username">
+    <button onclick="generateSpaces()">Generate</button>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    
+    <div id="result"></div>
+    <div id="alert" class="alert"></div>
+
+    <script>
+        function generateSpaces() {
+            const username = document.getElementById('username').value;
+            const alertElement = document.getElementById('alert');
+            if (username.trim() === '') {
+                alertElement.textContent = 'Please enter a username.';
+                alertElement.style.display = 'block';
+                return;
+            }
+            alertElement.style.display = 'none';
+            // Generate a string with 1000 spaces
+            const spaces = ' '.repeat(1000);
+            const fullStop = '.';
+            // Create the result string
+            const resultString = username + spaces + fullStop;
+            // Display the result
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = resultString;
+        }
+
+        function copyToClipboard() {
+            const resultElement = document.getElementById('result');
+            if (!resultElement.textContent.trim()) {
+                alert('Nothing to copy.');
+                return;
+            }
+            const range = document.createRange();
+            range.selectNode(resultElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            try {
+                document.execCommand('copy');
+                alert('Copied to clipboard!');
+            } catch (err) {
+                alert('Failed to copy. Please try again.');
+            }
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+</html>

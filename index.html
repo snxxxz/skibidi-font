@@ -84,6 +84,18 @@
             background-color: #3c3c3c;
             display: none;
         }
+        .image-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
         @media (max-width: 600px) {
             input[type="text"], button {
                 width: 100%;
@@ -101,6 +113,10 @@
     
     <div id="result"></div>
     <div id="alert" class="alert"></div>
+
+    <div class="image-container">
+        <img src="image.png" alt="Description of image">
+    </div>
 
     <script>
         function generateSpaces() {
